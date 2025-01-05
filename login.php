@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($usuario == $usuario_valido && $contraseña == $contraseña_valida) {
         // Si las credenciales son correctas, redirigir a la página de inicio
         $_SESSION['usuario'] = $usuario; // Guardar el usuario en la sesión
-        echo "<script>alert('Inicio de sesión exitoso'); window.location.href = 'Inicio.html';</script>";
+        echo "<script>alert('Inicio de sesión exitoso'); window.location.href = 'index.html';</script>";
     } else {
         // Si las credenciales no son correctas, mostrar un mensaje de error
         echo "<script>alert('Usuario o contraseña incorrectos');</script>";
