@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio - Cursos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="stylebox.css">
+
+  <style>
+    body {
+      background-color: #121421;
+      color: #fff;
+    }
+
+    .sidebar {
+      background-color: #1b1e2f;
+      height: 100vh;
+      position: fixed;
+      width: 250px;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 15px;
+      margin: 10px 0;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #343a40;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .hero-section {
+      background: linear-gradient(to right, #1f3b73, #2c538e);
+      padding: 50px;
+      border-radius: 10px;
+    }
+
+    .hero-section h1 {
+      color: #fff;
+    }
+
+    .course-card {
+      background-color: #1b1e2f;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .course-card img {
+      border-radius: 10px 10px 0 0;
+    }
+
+    .course-card .btn-primary {
+      background-color: #2c538e;
+      border: none;
+    }
+
+    footer {
+      background-color: #1b1e2f;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <a href="#" class="d-flex align-items-center mb-4">
+        <i class="fa-solid fa-book fa-lg mr-2"></i>
+        <span>Bienvenidos</span>
+      </a>
+      <a href="./cursos.html"><i class="bi bi-book"></i>  Cursos</a>
+      <a href="./seminarios.html"><i class="bi bi-people"></i>  Seminarios</a>
+      <a href="./conferencias.html"><i class="bi bi-mic"></i>  Conferencias</a>
+    </nav>
+
+    <div class="content w-100">
+      <!-- Encabezado -->
+      <header class="d-flex justify-content-between align-items-center mb-4">
+        <form class="form-inline">
+          <div class="input-group">
+            
+            <div class="input-group-append">
+              
+            </div>
+          </div>
+        </form>
+        <div>
+            <button class="btn btn-outline-light" onclick="window.location.href='./login.html'">Entrar</button>
+        </div>
+      </header>
+
+    
+      <section class="hero-section text-white text-center mb-5">
+        <h1>Cursos para todas las asignaturas</h1>
+        <p>Todos los cursos disponibles para ti.</p>
+      </section>
+
+      <!-- Ejemplos de cursos -->
+      <h2 class="mb-4">Cursos Online</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="html.jpeg" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Html desde 0</h5>
+              <p class="card-text">Quito - Universidad UTE</p>
+              <button class="btn btn-primary btn-block" onclick="window.location.href='./cursos.html'">Ir a cursos</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="marketing.jpg" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Digital</h5>
+              <p class="card-text">Curso Online</p>
+              <button class="btn btn-primary btn-block" onclick="window.location.href='./cursos.html'">Ir a cursos</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="python.png" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Phyton Avanzado</h5>
+              <p class="card-text">Curso Online</p>
+              <button class="btn btn-primary btn-block" onclick="window.location.href='./cursos.html'">Ir a cursos</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="power.png" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Power BI desde 0</h5>
+              <p class="card-text">Quito - Colegio Paulo VI</p>
+              <button class="btn btn-primary btn-block"onclick="window.location.href='./cursos.html'"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-white mt-5">
+    <p>&copy; Cursos Online - Todos los derechos reservados</p>
+  </footer>
+</body>
+
+</html>

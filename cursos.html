@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos - Cursos Online</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="stylebox.css">
+  <style>
+    body {
+      background-color: #121421;
+      color: #fff;
+    }
+
+    .sidebar {
+      background-color: #1b1e2f;
+      height: 100vh;
+      position: fixed;
+      width: 250px;
+      padding-top: 20px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 15px;
+      margin: 10px 0;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #343a40;
+    }
+
+    .content {
+      margin-left: 270px;
+      padding: 20px;
+    }
+
+    .course-card {
+      background-color: #1b1e2f;
+      border: none;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .course-card img {
+      border-radius: 10px 10px 0 0;
+    }
+
+    .course-card .btn-primary {
+      background-color: #2c538e;
+      border: none;
+    }
+
+    footer {
+      background-color: #1b1e2f;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .back-button {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="d-flex">
+    <!-- Barra de navegación -->
+    <nav class="sidebar">
+      <a href="#" class="d-flex align-items-center mb-4">
+        <i class="fa-solid fa-book fa-lg mr-2"></i>
+        <span>Bienvenidos</span>
+      </a>
+      <a href="./cursos.html"><i class="bi bi-book"></i>  Cursos</a>
+      <a href="./seminarios.html"><i class="bi bi-people"></i>  Seminarios</a>
+      <a href="./conferencias.html"><i class="bi bi-mic"></i>  Conferencias</a>
+    </nav>
+
+    <div class="content w-100">
+      <!-- Botón para regresar al inicio -->
+      <div class="back-button">
+        <a href="./Inicio.html" class="btn btn-outline-light">
+          <i class="bi bi-arrow-left-circle"></i> Regresar al Inicio
+        </a>
+      </div>
+
+      <!-- Encabezado -->
+      <h2 class="mb-4">Cursos Disponibles</h2>
+
+      <!-- Lista de cursos -->
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="html.jpeg" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Html desde 0</h5>
+              <p class="card-text">Quito - Universidad UTE</p>
+              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#courseModal1">Más Información</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="marketing.jpg" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Marketing Digital</h5>
+              <p class="card-text">Curso Online</p>
+              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#courseModal2">Más Información</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="python.png" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Python Avanzado</h5>
+              <p class="card-text">Curso Online</p>
+              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#courseModal3">Más Información</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card course-card">
+            <img src="power.png" class="card-img-top" alt="Curso">
+            <div class="card-body">
+              <h5 class="card-title">Power BI desde 0</h5>
+              <p class="card-text">Quito - Colegio Paulo VI</p>
+              <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#courseModal4">Más Información</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Ventanas emergentes de los cursos. -->
+
+<div class="modal fade" id="courseModal1" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Html desde 0</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-4">
+            <img src="usuario.jpg" alt="Juan Pérez" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          <h6>Descripción del curso:</h6>
+          <p>Curso de HTML desde nivel básico hasta avanzado. Aprende los conceptos fundamentales de desarrollo web, incluyendo estructuras, etiquetas, formularios, enlaces, tablas y más.</p>
+          <h6>Instructor:</h6>
+          <p>Juan Pérez</p>
+          <h6>Ubicación:</h6>
+          <p>Quito - Universidad UTE</p>
+          <h6>Horarios:</h6>
+          <p>De lunes a viernes, de 18:00 a 20:00</p>
+          <h6>Duración:</h6>
+          <p>6 semanas</p>
+        </div>
+        <div class="modal-footer">
+            <button id="reserveBtn_1" class="btn btn-primary" onclick="reserveCourse(1)">Reservar</button>
+            <p id="reservationMessage_1" style="color: red; display: none;">Curso ya reservado</p><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="modal fade" id="courseModal2" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Marketing Digital</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-4">
+            <img src="usuario.jpg" alt="María López" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          <h6>Descripción del curso:</h6>
+          <p>Curso sobre estrategias de marketing digital, redes sociales y optimización para motores de búsqueda. Aprende a implementar campañas eficaces para aumentar tu presencia online.</p>
+          <h6>Instructor:</h6>
+          <p>María López</p>
+          <h6>Ubicación:</h6>
+          <p>Quito - Universidad UTE</p>
+          <h6>Horarios:</h6>
+          <p>De lunes a viernes, de 18:00 a 20:00</p>
+          <h6>Duración:</h6>
+          <p>8 semanas</p>          
+        </div>
+        <div class="modal-footer">
+            <button id="reserveBtn_2" class="btn btn-primary" onclick="reserveCourse(2)">Reservar</button>
+            <p id="reservationMessage_2" style="color: red; display: none;">Curso ya reservado</p><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="courseModal3" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Python Avanzado</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-4">
+            <img src="usuario.jpg" alt="Carlos Gómez" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          <h6>Descripción del curso:</h6>
+          <p>Curso avanzado de Python, donde aprenderás técnicas avanzadas de programación, desarrollo de aplicaciones y análisis de datos.</p>
+          <h6>Instructor:</h6>
+          <p>Carlos Gómez</p>
+          <h6>Ubicación:</h6>
+          <p>Quito - Universidad UTE</p>
+          <h6>Horarios:</h6>
+          <p>De lunes a viernes, de 18:00 a 20:00</p>
+          <h6>Duración:</h6>
+          <p>10 semanas</p>
+        </div>
+        <div class="modal-footer">
+            <button id="reserveBtn_3" class="btn btn-primary" onclick="reserveCourse(3)">Reservar</button>
+            <p id="reservationMessage_3" style="color: red; display: none;">Curso ya reservado</p><button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="courseModal4" tabindex="-1" role="dialog" aria-labelledby="courseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="courseModalLabel">Power BI desde 0</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="d-flex justify-content-center mb-4">
+            <img src="usuario.jpg" alt="Laura Fernández" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+          </div>
+          <h6>Descripción del curso:</h6>
+          <p>Curso introductorio a Power BI para aprender a crear reportes y análisis de datos interactivos. Ideal para quienes buscan mejorar la toma de decisiones a partir de datos.</p>
+          <h6>Instructor:</h6>
+          <p>Laura Fernández</p>
+          <h6>Ubicación:</h6>
+          <p>Quito - Universidad UTE</p>
+          <h6>Horarios:</h6>
+          <p>De lunes a viernes, de 18:00 a 20:00</p>
+          <h6>Duración:</h6>
+          <p>4 semanas</p>
+  
+          <!-- Botón de reserva y mensaje -->
+        </div>
+        <div class="modal-footer">
+            <button id="reserveBtn_4" class="btn btn-primary" onclick="reserveCourse(4)">Reservar</button>
+            <p id="reservationMessage_4" style="color: red; display: none;">Curso ya reservado</p> <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    // Comprobamos si el curso ya ha sido reservado en la sesión
+    function checkReservation(courseId) {
+      const reservationKey = 'reserved_' + courseId;
+      if (sessionStorage.getItem(reservationKey)) {
+        // Si el curso ya ha sido reservado, deshabilitamos el botón y mostramos el mensaje
+        document.getElementById('reserveBtn_' + courseId).disabled = true;
+        document.getElementById('reservationMessage_' + courseId).style.display = 'block';
+      } else {
+        // Si el curso no ha sido reservado, mostramos el botón para reservar
+        document.getElementById('reserveBtn_' + courseId).disabled = false;
+        document.getElementById('reservationMessage_' + courseId).style.display = 'none';
+      }
+    }
+  
+    // Función para reservar el curso
+    function reserveCourse(courseId) {
+      // Guardamos en sessionStorage que el curso ha sido reservado
+      const reservationKey = 'reserved_' + courseId;
+      sessionStorage.setItem(reservationKey, 'true');
+      
+      // Deshabilitamos el botón y mostramos el mensaje
+      document.getElementById('reserveBtn_' + courseId).disabled = true;
+      document.getElementById('reservationMessage_' + courseId).style.display = 'block';
+    }
+  
+    // Verificamos el estado de la reserva al cargar la página
+    window.onload = function() {
+      checkReservation(1); // Para el curso 1 (Html desde 0)
+      checkReservation(2); // Para el curso 2 (Marketing Digital)
+      checkReservation(3); // Para el curso 3 (Python Avanzado)
+      checkReservation(4); // Para el curso 4 (Power BI desde 0)
+    };
+  </script>
+  
+  
+
+</html>
