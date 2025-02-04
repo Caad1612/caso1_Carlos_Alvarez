@@ -23,7 +23,7 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="stylebox.css">
+  <link rel="stylesheet" href="stylebox.css">
 
   <style>
     body {
@@ -109,25 +109,35 @@
       <header class="d-flex justify-content-between align-items-center mb-4">
         <form class="form-inline">
           <div class="input-group">
-            
+            <!-- Selector de idioma -->
             <div class="input-group-append">
-              
+              <select class="form-control mr-2" id="languageSelect" onchange="setLanguage()">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+            <!-- Selector de país -->
+            <div class="input-group-append">
+              <select class="form-control" id="countrySelect" onchange="setCountry()">
+                <option value="EC">Ecuador</option>
+                <option value="ES">España</option>
+              </select>
             </div>
           </div>
         </form>
         <div>
-            <button class="btn btn-outline-light" onclick="window.location.href='./login.html'">Entrar</button>
+          <button class="btn btn-outline-light" onclick="window.location.href='./login.html'">Entrar</button>
         </div>
       </header>
 
     
       <section class="hero-section text-white text-center mb-5">
-        <h1>Cursos para todas las asignaturas</h1>
-        <p>Todos los cursos disponibles para ti.</p>
+        <h1 id="hero-title">Cursos para todas las asignaturas</h1>
+        <p id="hero-description">Todos los cursos disponibles para ti.</p>
       </section>
 
       <!-- Ejemplos de cursos -->
-      <h2 class="mb-4">Cursos Online</h2>
+      <h2 id="courses-title" class="mb-4">Cursos Online</h2>
       <div class="row">
         <div class="col-md-3">
           <div class="card course-card">
@@ -165,17 +175,80 @@
             <div class="card-body">
               <h5 class="card-title">Power BI desde 0</h5>
               <p class="card-text">Quito - Colegio Paulo VI</p>
-              <button class="btn btn-primary btn-block"onclick="window.location.href='./cursos.html'"></button>
+              <button class="btn btn-primary btn-block"onclick="window.location.href='./cursos.html'">Ir a cursos</button>
             </div>
           </div>
         </div>
       </div>
+      <p id="formattedDate"></p>
+      <p id="currency"></p>
     </div>
   </div>
 
   <footer class="text-white mt-5">
     <p>&copy; Cursos Online - Todos los derechos reservados</p>
   </footer>
+
+  <script>
+    // Función para cargar el idioma y país desde el LocalStorage y aplicar la configuración
+    function loadLanguageAndCountry() {
+      const language = localStorage.getItem('language') || 'es';
+      const country = localStorage.getItem('country') || 'EC';
+
+      const languageSelect = document.getElementById('languageSelect');
+      const countrySelect = document.getElementById('countrySelect');
+      
+      languageSelect.value = language;
+      countrySelect.value = country;
+
+      setLanguage();
+      setCountry();
+    }
+
+    // Función que se ejecuta al cambiar el idioma
+    function setLanguage() {
+      const language = document.getElementById('languageSelect').value;
+      localStorage.setItem('language', language);
+
+      if (language === 'es') {
+        document.documentElement.lang = 'es';
+        document.getElementById('hero-title').innerText = 'Cursos para todas las asignaturas';
+        document.getElementById('hero-description').innerText = 'Todos los cursos disponibles para ti.';
+        document.getElementById('courses-title').innerText = 'Cursos Online';
+      } else if (language === 'en') {
+        document.documentElement.lang = 'en';
+        document.getElementById('hero-title').innerText = 'Courses for all subjects';
+        document.getElementById('hero-description').innerText = 'All the courses available for you.';
+        document.getElementById('courses-title').innerText = 'Online Courses';
+      }
+    }
+
+    // Función que se ejecuta al cambiar el país
+    function setCountry() {
+      const country = document.getElementById('countrySelect').value;
+      localStorage.setItem('country', country);
+
+      if (country === 'EC') {
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('es-EC');
+        document.getElementById('formattedDate').innerText = `Fecha: ${formattedDate}`;
+        document.getElementById('currency').innerText = 'Moneda: $ (USD)';
+      } else if (country === 'ES') {
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('es-ES');
+        document.getElementById('formattedDate').innerText = `Fecha: ${formattedDate}`;
+        document.getElementById('currency').innerText = 'Moneda: € (EUR)';
+      }
+    }
+
+   
+    loadLanguageAndCountry();
+  </script>
+
+</body>
+
+</html>
+
 </body>
 
 </html>
